@@ -18,6 +18,7 @@ export const EmployeeForm = (burrito) => {
         No more `document.querySelector()` in React.
     */
     const name = useRef(null)
+    const address = useRef(null)
     const location = useRef(null)
     const animal = useRef(null)
 
@@ -43,6 +44,7 @@ export const EmployeeForm = (burrito) => {
         } else {
             addEmployee({
                 name: name.current.value,
+                address: address.current.value,
                 locationId,
                 animalId
             })
@@ -57,6 +59,12 @@ export const EmployeeForm = (burrito) => {
                 <div className="form-group">
                     <label htmlFor="employeeName">Employee name: </label>
                     <input type="text" id="employeeName" ref={name} required autoFocus className="form-control" placeholder="Employee name" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="employeeAddress">Employee address: </label>
+                    <input type="text" id="employeeAddress" ref={address} required autoFocus className="form-control" placeholder="Employee address" />
                 </div>
             </fieldset>
             <fieldset>
